@@ -7,6 +7,7 @@ import {
 } from "@clerk/nextjs";
 import Link from "next/link";
 import React from "react";
+import { ThemeToggler } from "./ThemeToggler";
 
 const Navbar = () => {
   return (
@@ -34,6 +35,7 @@ const Navbar = () => {
             <SignedIn>
               <UserButton />
             </SignedIn>
+            <ThemeToggler />
           </div>
         </div>
       </div>
