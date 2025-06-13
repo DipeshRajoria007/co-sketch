@@ -1,5 +1,5 @@
-import type { NextApiRequest, NextApiResponse } from 'next';
-import { Server } from 'socket.io';
+import type { NextApiRequest, NextApiResponse } from "next";
+import { Server } from "socket.io";
 
 export const config = {
   api: {
@@ -14,15 +14,15 @@ type NextApiResponseWithSocket = NextApiResponse & {
 export default function handler(req: NextApiRequest, res: NextApiResponseWithSocket) {
   if (!res.socket.server.io) {
     const io = new Server(res.socket.server, {
-      path: '/api/socket',
+      path: "/api/socket",
     });
 
-    io.on('connection', (socket) => {
-      socket.on('join', (roomId: string) => {
+    io.on("connection", (socket) => {
+      socket.on("join", (roomId: string) => {
         socket.join(roomId);
       });
-      socket.on('draw', ({ roomId, x, y }) => {
-        socket.to(roomId).emit('draw', { x, y });
+      socket.on("draw", ({ roomId, x, y }) => {
+        socket.to(roomId).emit("draw", { x, y });
       });
     });
 

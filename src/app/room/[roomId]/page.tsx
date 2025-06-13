@@ -1,4 +1,4 @@
-import Whiteboard from '@/components/Whiteboard';
+import Whiteboard from "@/components/Whiteboard";
 
 interface RoomPageProps {
   params: { roomId: string };
