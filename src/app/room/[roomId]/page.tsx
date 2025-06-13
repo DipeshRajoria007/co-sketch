@@ -1,4 +1,4 @@
-import Whiteboard from "@/components/Whiteboard";
+import DraggableWhiteboard from "@/components/DraggableWhiteboard";
 
 interface RoomPageProps {
   params: { roomId: string };
@@ -7,7 +7,7 @@ interface RoomPageProps {
 export default function RoomPage({ params }: RoomPageProps) {
   return (
     <div className="flex-1 h-[calc(100vh-4rem)]">
-      <Whiteboard roomId={params.roomId} />
+      <DraggableWhiteboard roomId={params.roomId} />
     </div>
   );
 }
