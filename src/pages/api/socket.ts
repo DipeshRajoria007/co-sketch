@@ -11,6 +11,8 @@ type NextApiResponseWithSocket = NextApiResponse & {
   socket: any;
 };
 
+const rooms: Record<string, any> = {};
+
 export default function handler(
   req: NextApiRequest,
   res: NextApiResponseWithSocket
@@ -23,9 +25,15 @@ export default function handler(
     io.on("connection", (socket) => {
       socket.on("join", (roomId: string) => {
         socket.join(roomId);
+        const snapshot = rooms[roomId];
+        if (snapshot) {
+          socket.emit("sync", snapshot);
+        }
       });
-      socket.on("draw", ({ roomId, x, y }) => {
-        socket.to(roomId).emit("draw", { x, y });
+
+      socket.on("sync", ({ roomId, data }) => {
+        rooms[roomId] = data;
+        socket.to(roomId).emit("sync", data);
       });
     });
 
