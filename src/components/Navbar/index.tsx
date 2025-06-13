@@ -1,3 +1,4 @@
+"use client";
 import {
   SignedIn,
   SignedOut,
@@ -8,8 +9,15 @@ import {
 import Link from "next/link";
 import React from "react";
 import { ThemeToggler } from "./ThemeToggler";
+import { Button } from "../ui/button";
+import useGetPlatformTheme from "@/hooks/useGetPlatformTheme";
 
 const Navbar = () => {
+  const { resolvedTheme } = useGetPlatformTheme();
+  const appearance = {
+    baseTheme: resolvedTheme,
+  };
+
   return (
     <header className="bg-background">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -21,19 +29,15 @@ const Navbar = () => {
           </div>
           <div className="flex items-center space-x-4">
             <SignedOut>
-              <SignInButton mode="modal">
-                <button className="text-sm font-medium text-gray-700 hover:text-gray-900">
-                  Sign in
-                </button>
+              <SignInButton mode="modal" appearance={appearance}>
+                <Button variant="outline">Sign in</Button>
               </SignInButton>
-              <SignUpButton mode="modal">
-                <button className="text-sm font-medium text-white bg-blue-600 hover:bg-blue-700 px-4 py-2 rounded-md">
-                  Sign up
-                </button>
+              <SignUpButton mode="modal" appearance={appearance}>
+                <Button variant="outline">Sign up</Button>
               </SignUpButton>
             </SignedOut>
             <SignedIn>
-              <UserButton />
+              <UserButton appearance={appearance} />
             </SignedIn>
             <ThemeToggler />
           </div>
