@@ -11,7 +11,16 @@ type NextApiResponseWithSocket = NextApiResponse & {
   socket: any;
 };
 
-const rooms: Record<string, any> = {};
+interface Point {
+  x: number;
+  y: number;
+}
+
+interface Line {
+  points: [Point, Point];
+}
+
+const rooms: Record<string, Line[]> = {};
 
 export default function handler(
   req: NextApiRequest,
@@ -25,16 +34,18 @@ export default function handler(
     io.on("connection", (socket) => {
       socket.on("join", (roomId: string) => {
         socket.join(roomId);
-        const snapshot = rooms[roomId];
-        if (snapshot) {
-          socket.emit("sync", snapshot);
-        }
+        const lines = rooms[roomId] || [];
+        socket.emit("init", lines);
       });
 
-      socket.on("sync", ({ roomId, data }) => {
-        rooms[roomId] = data;
-        socket.to(roomId).emit("sync", data);
-      });
+      socket.on(
+        "stroke",
+        ({ roomId, line }: { roomId: string; line: Line }) => {
+          if (!rooms[roomId]) rooms[roomId] = [];
+          rooms[roomId].push(line);
+          socket.to(roomId).emit("stroke", line);
+        }
+      );
     });
 
     res.socket.server.io = io;
