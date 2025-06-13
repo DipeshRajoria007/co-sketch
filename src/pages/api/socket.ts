@@ -11,7 +11,10 @@ type NextApiResponseWithSocket = NextApiResponse & {
   socket: any;
 };
 
-export default function handler(req: NextApiRequest, res: NextApiResponseWithSocket) {
+export default function handler(
+  req: NextApiRequest,
+  res: NextApiResponseWithSocket
+) {
   if (!res.socket.server.io) {
     const io = new Server(res.socket.server, {
       path: "/api/socket",
