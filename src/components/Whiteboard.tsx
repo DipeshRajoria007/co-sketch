@@ -21,8 +21,22 @@ const Whiteboard = ({ roomId }: WhiteboardProps) => {
     if (!ctx) return;
 
     const handleResize = () => {
+      // Preserve current drawing before resizing because changing the canvas
+      // size clears its contents.
+      const prevCanvas = document.createElement('canvas');
+      prevCanvas.width = canvas.width;
+      prevCanvas.height = canvas.height;
+      const prevCtx = prevCanvas.getContext('2d');
+      if (prevCtx) {
+        prevCtx.drawImage(canvas, 0, 0);
+      }
+
       canvas.width = canvas.offsetWidth;
       canvas.height = canvas.offsetHeight;
+
+      if (prevCtx) {
+        ctx.drawImage(prevCanvas, 0, 0, prevCanvas.width, prevCanvas.height);
+      }
     };
     handleResize();
     window.addEventListener('resize', handleResize);
