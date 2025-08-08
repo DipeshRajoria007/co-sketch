@@ -65,7 +65,7 @@ export default function Home() {
       {/* Features Section */}
       <FeatureSection />
       {/* Use Cases Section */}
-      <section className="py-20 bg-gray-50 dark:bg-gray-900">
+      <section className="py-20 bg-white dark:bg-gray-900">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold text-gray-900 dark:text-white mb-4">
