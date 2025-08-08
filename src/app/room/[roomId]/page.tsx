@@ -6,7 +6,7 @@ interface RoomPageProps {
 
 export default function RoomPage({ params }: RoomPageProps) {
   return (
-    <div className="flex-1 h-[calc(100vh-4rem)]">
+    <div className="flex-1 w-full h-[calc(100vh-4rem)]">
       <DraggableWhiteboard roomId={params.roomId} />
     </div>
   );

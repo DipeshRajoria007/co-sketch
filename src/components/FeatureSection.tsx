@@ -23,8 +23,8 @@ const FeatureSection = () => {
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           <Card className="border-0 shadow-lg hover:shadow-xl transition-shadow duration-300 dark:bg-gray-700 dark:border-gray-600">
             <CardContent className="p-8">
-              <div className="w-12 h-12 bg-blue-100 dark:bg-blue-900 rounded-lg flex items-center justify-center mb-4">
-                <Palette className="w-6 h-6 text-blue-600 dark:text-blue-400" />
+              <div className="w-12 h-12 bg-black dark:bg-white rounded-lg flex items-center justify-center mb-4">
+                <Palette className="w-6 h-6 text-white dark:text-black" />
               </div>
               <h3 className="text-xl font-semibold mb-3 dark:text-white">
                 Advanced Drawing Tools
@@ -38,8 +38,8 @@ const FeatureSection = () => {
 
           <Card className="border-0 shadow-lg hover:shadow-xl transition-shadow duration-300 dark:bg-gray-700 dark:border-gray-600">
             <CardContent className="p-8">
-              <div className="w-12 h-12 bg-purple-100 dark:bg-purple-900 rounded-lg flex items-center justify-center mb-4">
-                <Users className="w-6 h-6 text-purple-600 dark:text-purple-400" />
+              <div className="w-12 h-12 bg-black dark:bg-white rounded-lg flex items-center justify-center mb-4">
+                <Users className="w-6 h-6 text-white dark:text-black" />
               </div>
               <h3 className="text-xl font-semibold mb-3 dark:text-white">
                 Real-time Collaboration
@@ -53,8 +53,8 @@ const FeatureSection = () => {
 
           <Card className="border-0 shadow-lg hover:shadow-xl transition-shadow duration-300 dark:bg-gray-700 dark:border-gray-600">
             <CardContent className="p-8">
-              <div className="w-12 h-12 bg-green-100 dark:bg-green-900 rounded-lg flex items-center justify-center mb-4">
-                <Video className="w-6 h-6 text-green-600 dark:text-green-400" />
+              <div className="w-12 h-12 bg-black dark:bg-white rounded-lg flex items-center justify-center mb-4">
+                <Video className="w-6 h-6 text-white dark:text-black" />
               </div>
               <h3 className="text-xl font-semibold mb-3 dark:text-white">
                 Integrated Video Chat
@@ -68,8 +68,8 @@ const FeatureSection = () => {
 
           <Card className="border-0 shadow-lg hover:shadow-xl transition-shadow duration-300 dark:bg-gray-700 dark:border-gray-600">
             <CardContent className="p-8">
-              <div className="w-12 h-12 bg-yellow-100 dark:bg-yellow-900 rounded-lg flex items-center justify-center mb-4">
-                <Zap className="w-6 h-6 text-yellow-600 dark:text-yellow-400" />
+              <div className="w-12 h-12 bg-black dark:bg-white rounded-lg flex items-center justify-center mb-4">
+                <Zap className="w-6 h-6 text-white dark:text-black" />
               </div>
               <h3 className="text-xl font-semibold mb-3 dark:text-white">
                 Lightning Fast
@@ -83,8 +83,8 @@ const FeatureSection = () => {
 
           <Card className="border-0 shadow-lg hover:shadow-xl transition-shadow duration-300 dark:bg-gray-700 dark:border-gray-600">
             <CardContent className="p-8">
-              <div className="w-12 h-12 bg-red-100 dark:bg-red-900 rounded-lg flex items-center justify-center mb-4">
-                <Shield className="w-6 h-6 text-red-600 dark:text-red-400" />
+              <div className="w-12 h-12 bg-black dark:bg-white rounded-lg flex items-center justify-center mb-4">
+                <Shield className="w-6 h-6 text-white dark:text-black" />
               </div>
               <h3 className="text-xl font-semibold mb-3 dark:text-white">
                 Secure Authentication
@@ -98,8 +98,8 @@ const FeatureSection = () => {
 
           <Card className="border-0 shadow-lg hover:shadow-xl transition-shadow duration-300 dark:bg-gray-700 dark:border-gray-600">
             <CardContent className="p-8">
-              <div className="w-12 h-12 bg-indigo-100 dark:bg-indigo-900 rounded-lg flex items-center justify-center mb-4">
-                <Globe className="w-6 h-6 text-indigo-600 dark:text-indigo-400" />
+              <div className="w-12 h-12 bg-black dark:bg-white rounded-lg flex items-center justify-center mb-4">
+                <Globe className="w-6 h-6 text-white dark:text-black" />
               </div>
               <h3 className="text-xl font-semibold mb-3 dark:text-white">
                 Room Management

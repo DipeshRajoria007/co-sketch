@@ -18,7 +18,7 @@ const HeroSection = () => {
     <section className="container mx-auto px-4 py-20 text-center">
       <Badge
         variant="secondary"
-        className="mb-6 bg-blue-100 text-blue-700 border-blue-200"
+        className="mb-6 bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 border-gray-200 dark:border-gray-600"
       >
         🚀 Real-time Collaboration
       </Badge>
@@ -67,7 +67,7 @@ const HeroSection = () => {
 
       {/* Hero Image Placeholder */}
       <div className="relative max-w-5xl mx-auto">
-        <div className="bg-gradient-to-br from-gray-100 to-gray-200 rounded-2xl shadow-2xl overflow-hidden">
+        <div className="bg-gray-100 dark:bg-gray-800 rounded-2xl shadow-2xl overflow-hidden">
           <Image
             src="/placeholder.svg?height=600&width=1000"
             alt="CoSketch Dashboard Preview"
@@ -76,7 +76,7 @@ const HeroSection = () => {
             height={600}
           />
         </div>
-        <div className="absolute -top-4 -right-4 bg-green-500 text-white px-3 py-1 rounded-full text-sm font-medium">
+        <div className="absolute -top-4 -right-4 bg-black dark:bg-white text-white dark:text-black px-3 py-1 rounded-full text-sm font-medium">
           Live Demo
         </div>
       </div>
