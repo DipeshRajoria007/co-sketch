@@ -69,7 +69,7 @@ const HeroSection = () => {
       <div className="relative max-w-5xl mx-auto">
         <div className="bg-gray-100 dark:bg-gray-800 rounded-2xl shadow-2xl overflow-hidden">
           <Image
-            src="/placeholder.svg?height=600&width=1000"
+            src="/assets/hero-image.png"
             alt="CoSketch Dashboard Preview"
             className="w-full h-auto"
             width={1000}
